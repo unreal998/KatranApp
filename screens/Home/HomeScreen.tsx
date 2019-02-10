@@ -1,5 +1,6 @@
 import * as React from "react";
 import {Text, View} from "react-native";
+import {style} from "./shHomeScreen";
 
 export default class HomeScreen extends React.Component {
     // state = {

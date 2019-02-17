@@ -9,7 +9,7 @@ export default class SettingsScreen extends React.Component {
     render(){
         return(
             <View style={style.container}>
-                <Text>Home</Text>
+                <Text>Settings</Text>
             </View>
         )
     }

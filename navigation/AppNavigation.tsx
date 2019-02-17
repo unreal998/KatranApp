@@ -2,10 +2,10 @@ import * as React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
 import DrawerNavigator from "./DrawerNavigator";
-import LogInScreen from "../screens/LogIn/LogInScreen";
+import AuthNavigation from "./AuthNavigation";
 
 const AppNavigation = createSwitchNavigator({
-    SignIn: {screen: LogInScreen},
+    SignIn: AuthNavigation,
     MainApp: DrawerNavigator});
 
 export default createAppContainer(AppNavigation);

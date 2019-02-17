@@ -9,7 +9,7 @@ export default class CatalogueScreen extends React.Component {
     render(){
         return(
             <View style={style.container}>
-                <Text>Home</Text>
+                <Text>Catalogue</Text>
             </View>
         )
     }

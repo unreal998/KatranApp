@@ -1,23 +1,38 @@
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import HomeScreen from '../screens/Home/HomeScreen';
 import * as React from "react";
-import CatalogueScreen from "../screens/Catalogue/CatalogueScreen";
 import SettingsScreen from "../screens/Settings/SettingsScreen";
+import ReservesScreen from "../screens/ReservesScreen/ReservesScreen";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
+
 });
 
-HomeStack.navigationOptions = {
-    tabBarLabel: 'Home'
+const barOptions = {
+    style:{
+
+    },
+    labelStyle: {
+
+    },
+    tabStyle: {
+
+    }
 };
 
-const CatalogueStack = createStackNavigator({
-    Links: CatalogueScreen,
+HomeStack.navigationOptions = {
+    tabBarLabel: 'Home',
+    tabBarOptions: barOptions
+};
+
+const ReservesStack = createStackNavigator({
+    Links: ReservesScreen,
 });
 
-CatalogueStack.navigationOptions = {
-    tabBarLabel: 'Catalogue'
+ReservesStack.navigationOptions = {
+    tabBarLabel: 'Reserves',
+    tabBarOptions: barOptions
 };
 
 const SettingsStack = createStackNavigator({
@@ -25,11 +40,12 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-    tabBarLabel: 'Settings'
+    tabBarLabel: 'Settings',
+    tabBarOptions: barOptions
 };
 
 export default createBottomTabNavigator({
     HomeStack,
-    CatalogueStack,
+    ReservesStack,
     SettingsStack,
 });

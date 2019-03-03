@@ -1,18 +1,8 @@
 import * as React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {Provider} from 'react-redux';
+import {View, Text, StyleSheet, StatusBar} from 'react-native';
 import AppNavigation from "./navigation/AppNavigation";
-export default class App extends React.Component {
-    // state = {
-    //     isLoadingComplete: false,
-    // };
-    render(){
-        return(
-            <View style={style.container}>
-               <AppNavigation/>
-            </View>
-        )
-    }
-}
+import store from "./store";
 
 const style = StyleSheet.create({
     container: {
@@ -20,3 +10,20 @@ const style = StyleSheet.create({
         backgroundColor: "#0f0"
     }
 });
+export default class App extends React.Component {
+    // state = {
+    //     isLoadingComplete: false,
+    // };
+    render(){
+        return(
+            <Provider store={store}>
+            <View style={style.container}>
+               <StatusBar hidden={true}/>
+               <AppNavigation/>
+            </View>
+            </Provider>
+        )
+    }
+}
+
+

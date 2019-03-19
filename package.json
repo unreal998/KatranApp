@@ -14,6 +14,7 @@
   "dependencies": {
     "@expo/samples": "2.1.1",
     "expo": "^32.0.0",
+    "native-base": "^2.12.1",
     "react": "16.5.0",
     "react-native-data-table": "^0.2.1",
     "react-navigation": "^3.0.9"

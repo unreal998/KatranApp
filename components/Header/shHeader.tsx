@@ -2,14 +2,26 @@ import {StyleSheet} from "react-native";
 
 export const style = StyleSheet.create({
     header:{
-        backgroundColor: "#2f4050",
-        height: 70,
+        backgroundColor: "#1e5799",
+        display: "flex",
+        flexDirection: "row",
+        height: 50,
         alignContent: "center",
-        justifyContent: "center"
+        alignItems: "center",
+        justifyContent: "space-around"
     },
-    text: {
-        color: "white",
-        fontSize: 25
+    searchContainer: {
+        backgroundColor: "white",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        alignContent: "center",
+        justifyContent: "space-around",
+        borderRadius: 5,
+        width: 250
+    },
+    searchHolder: {
+        width: 220
     }
 });
 

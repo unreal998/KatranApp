@@ -8,7 +8,7 @@ const defaultUserState: IUserDetails = {
   curse: "26/25"
 };
 
-export let authAction:any = {
+export let authAction: any = {
     type: AUTH_ACTION,
-    payload: defaultUserState
+    payload: {defaultUserState}
 };

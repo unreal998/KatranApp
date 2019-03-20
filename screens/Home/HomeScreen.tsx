@@ -13,8 +13,11 @@ class HomeScreen extends React.Component<any,any> {
         super(props)
     }
     static navigationOptions = ({navigation}) => {
-        return{
-            header: props => <Header/>
+        return {
+            header: props => <Header/>,
+            drawerIcon: (
+                <Image source={require("../../assets/images/wallet.png")}/>
+            )
         };
     };
 

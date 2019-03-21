@@ -1,7 +1,7 @@
 import { createStackNavigator, DrawerItems } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
-import ReservesScreen from "../screens/ReservesScreen/ReservesScreen";
+import OrdersScreen from "../screens/ReservesScreen/OrdersScreen";
 import HomeScreen from "../screens/Home/HomeScreen";
 import SettingsScreen from "../screens/Settings/SettingsScreen";
 import * as React from "react";
@@ -17,7 +17,7 @@ const HomeStack = createStackNavigator({
     Home: HomeScreen,
 });
 const ReservesStack = createStackNavigator({
-    Links: ReservesScreen,
+    Links: OrdersScreen,
 });
 const CatalogueStack = createStackNavigator({
     Catalogue: CatalogueScreen

@@ -14,7 +14,7 @@ class HomeScreen extends React.Component<any,any> {
     }
     static navigationOptions = ({navigation}) => {
         return {
-            header: props => <Header/>,
+            header: props => <Header roomName="Home"/>,
             drawerIcon: (
                 <Image source={require("../../assets/images/wallet.png")}/>
             )

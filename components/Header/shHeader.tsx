@@ -10,6 +10,10 @@ export const style = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-around"
     },
+    roomName: {
+      color: "#ffffff",
+      fontSize: 22
+    },
     searchContainer: {
         backgroundColor: "white",
         display: "flex",
@@ -18,10 +22,10 @@ export const style = StyleSheet.create({
         alignContent: "center",
         justifyContent: "space-around",
         borderRadius: 5,
-        width: 250
+        width: 180
     },
     searchHolder: {
-        width: 220
+        width: 150
     }
 });
 

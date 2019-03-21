@@ -8,6 +8,7 @@ export const Header = props => {
   return (
       <View style={style.header}>
           <Image style={{width: 20, height: 20}} source={require("../../assets/images/menu.png")}/>
+          <Text style={style.roomName}>{props.roomName}</Text>
           <View style={style.searchContainer}>
               <Image style={{width: 20, height: 20}} source={require("../../assets/images/search.png")}/>
               <TextInput style={style.searchHolder} placeholder={"Search"}/>

@@ -7,11 +7,33 @@ export const style = StyleSheet.create({
        flexWrap: "wrap",
     },
     scrollView: {
-        margin: 5,
+        padding: 5,
         backgroundColor: "#f3f1f1",
     },
     goodName: {
         fontSize: 12
+    },
+    sliderWrapper: {
+        display: "flex",
+        alignContent: "center",
+        justifyContent: "center",
+    },
+    sliderContainer: {
+        display: "flex",
+        flexDirection: "row"
+    },
+    arrowLeft: {
+       position: "absolute",
+       width: 50,
+       height: 50,
+       zIndex: 2
+    },
+    arrowRight: {
+        position: "absolute",
+        width: 50,
+        height: 50,
+        zIndex: 2,
+        right: 1
     },
     goodContainer: {
        display: "flex",

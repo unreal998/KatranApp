@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Text, View} from "react-native";
 import {style} from "./shCatalogueScreen";
-import {Header} from "../../components/Header/Header";
+import Header from "../../components/Header/Header";
 
 export default class CatalogueScreen extends React.Component {
     // state = {

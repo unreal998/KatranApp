@@ -17,7 +17,7 @@ const HomeStack = createStackNavigator({
     Home: HomeScreen,
 });
 const ReservesStack = createStackNavigator({
-    Links: OrdersScreen,
+    Reserves: OrdersScreen,
 });
 const CatalogueStack = createStackNavigator({
     Catalogue: CatalogueScreen

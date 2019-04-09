@@ -1,8 +1,8 @@
 import * as React from "react";
 import {connect} from "react-redux";
-import {Button, ImageBackground, Image, Text, View, ScrollView} from "react-native";
+import {Button, ImageBackground, Image, Text, View, ScrollView, FlatList} from "react-native";
 import {style} from "./shHomeScreen";
-import {Header} from "../../components/Header/Header";
+import Header from "../../components/Header/Header";
 import store from "../../store";
 import {authAction} from "../../actions/authAction";
 import {AUTH_ACTION} from "../../constants/ActionTypes";
@@ -11,7 +11,9 @@ import {bindActionCreators} from "redux";
 class HomeScreen extends React.Component<any,any> {
     constructor(props){
         super(props)
+        this.moveRight = this.moveRight.bind(this);
     }
+
     static navigationOptions = ({navigation}) => {
         return {
             header: props => <Header roomName="Home"/>,
@@ -24,6 +26,11 @@ class HomeScreen extends React.Component<any,any> {
     // state = {
     //     isLoadingComplete: false,
     // };
+
+    moveRight(){
+        document.getElementById("sliderComponent")
+    }
+
     componentWillMount(){
         store.dispatch(authAction);
     }
@@ -31,73 +38,121 @@ class HomeScreen extends React.Component<any,any> {
 
         return(
             <ScrollView style={style.scrollView}>
+                <View style={style.sliderWrapper}>
+                    <Image style={style.arrowLeft} source={require("../../assets/images/leftArrow.png")}/>
+                    <Image style={style.arrowRight} source={require("../../assets/images/rightArrow.png")}/>
+                    <View nativeID={"sliderComponent"} style={style.sliderContainer}>
+                        <Image style={{width: 500, height: 200}} source={require("../../assets/images/catalogs/slideImg1.jpg")}/>
+                        <Image style={{width: 500, height: 200}} source={require("../../assets/images/catalogs/slideImg2.jpg")}/>
+                        <Image style={{width: 500, height: 200}} source={require("../../assets/images/catalogs/slideImg3.jpg")}/>
+                        <Image style={{width: 500, height: 200}} source={require("../../assets/images/catalogs/slideImg4.jpg")}/>
+                    </View>
+
+                </View>
+                <Button title={"Каталог"} onPress={()=> this.props.navigation.navigate('Catalogue')}/>
                 <Text>Популярные товары</Text>
                 <View style={style.container}>
-                    <View style={style.goodContainer}>
-                        <Image style={{width: 70, height: 120}} source={require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg")}/>
-                        <Text style={style.goodName}>Xiaomi Mi Band 3 Black</Text>
-                        <View style={style.goodMenu}>
-                            <Text>790 $</Text>
-                            <Image style={{width: 20, height: 20}} source={require("../../assets/images/menuDots.png")}/>
-                        </View>
+                        <FlatList
+                            data={
+                                [
+                                {
+                                    key: "1",
+                                    staffName: "xiaomi_mi_band_3",
+                                    imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
+                                    date: "15/02/2019",
+                                    prise: "20 usd",
+                                },
+                                {
+                                    key: "2",
+                                    staffName: "xiaomi_mi_band_3",
+                                    imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
+                                    date: "15/12/2019",
+                                    prise: "30 usd",
+                                },
+                                {
+                                    key: "3",
+                                    staffName: "xiaomi_mi_band_3",
+                                    imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
+                                    date: "15/02/2019",
+                                    prise: "20 usd",
+                                },
+                                {
+                                    key: "4",
+                                    staffName: "xiaomi_mi_band_3",
+                                    imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
+                                    date: "15/02/2019",
+                                    prise: "20 usd",
+                                },
+                                {
+                                    key: "5",
+                                    staffName: "xiaomi_mi_band_3",
+                                    imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
+                                    date: "15/02/2019",
+                                    prise: "20 usd",
 
-                    </View>
-                    <View style={style.goodContainer}>
-                        <Image style={{width: 70, height: 120}} source={require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg")}/>
-                        <Text >Xiaomi Mi Band 3 Black</Text>
-                        <View style={style.goodMenu}>
-                            <Text>790 $</Text>
-                            <Image style={{width: 20, height: 20}} source={require("../../assets/images/menuDots.png")}/>
-                        </View>
-                    </View>
-                    <View style={style.goodContainer}>
-                        <Image style={{width: 70, height: 120}} source={require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg")}/>
-                        <Text>Xiaomi Mi Band 3 Black</Text>
-                        <View style={style.goodMenu}>
-                            <Text>790 $</Text>
-                            <Image style={{width: 20, height: 20}} source={require("../../assets/images/menuDots.png")}/>
-                        </View>
-                    </View>
-                    <View style={style.goodContainer}>
-                        <Image style={{width: 70, height: 120}} source={require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg")}/>
-                        <Text>Xiaomi Mi Band 3 Black</Text>
-                        <View style={style.goodMenu}>
-                            <Text>790 $</Text>
-                            <Image style={{width: 20, height: 20}} source={require("../../assets/images/menuDots.png")}/>
-                        </View>
-                    </View>
-                    <View style={style.goodContainer}>
-                        <Image style={{width: 70, height: 120}} source={require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg")}/>
-                        <Text>Xiaomi Mi Band 3 Black</Text>
-                        <View style={style.goodMenu}>
-                            <Text>790 $</Text>
-                            <Image style={{width: 20, height: 20}} source={require("../../assets/images/menuDots.png")}/>
-                        </View>
-                    </View>
-                    <View style={style.goodContainer}>
-                        <Image style={{width: 70, height: 120}} source={require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg")}/>
-                        <Text>Xiaomi Mi Band 3 Black</Text>
-                        <View style={style.goodMenu}>
-                            <Text>790 $</Text>
-                            <Image style={{width: 20, height: 20}} source={require("../../assets/images/menuDots.png")}/>
-                        </View>
-                    </View>
-                    <View style={style.goodContainer}>
-                        <Image style={{width: 70, height: 120}} source={require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg")}/>
-                        <Text>Xiaomi Mi Band 3 Black</Text>
-                        <View style={style.goodMenu}>
-                            <Text>790 $</Text>
-                            <Image style={{width: 20, height: 20}} source={require("../../assets/images/menuDots.png")}/>
-                        </View>
-                    </View>
-                    <View style={style.goodContainer}>
-                        <Image style={{width: 70, height: 120}} source={require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg")}/>
-                        <Text>Xiaomi Mi Band 3 Black</Text>
-                        <View style={style.goodMenu}>
-                            <Text>790 $</Text>
-                            <Image style={{width: 20, height: 20}} source={require("../../assets/images/menuDots.png")}/>
-                        </View>
-                    </View>
+                                },
+                            ]}
+                            renderItem={({item}) =>
+                                <View style={style.goodContainer}>
+                                    <Image style={{width: 70, height: 120}} source={item.imgUrl}/>
+                                    <Text>{item.staffName}</Text>
+                                    <View style={style.goodMenu}>
+                                        <Text>{item.prise}</Text>
+                                    </View>
+                                </View>
+                            }
+                            keyExtractor={(item, index) => item.key}
+                        />
+                    <FlatList
+                        data={[
+                            {
+                                key: "1",
+                                staffName: "xiaomi_mi_band_3",
+                                imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
+                                date: "15/02/2019",
+                                prise: "20 usd",
+                            },
+                            {
+                                key: "2",
+                                staffName: "xiaomi_mi_band_3",
+                                imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
+                                date: "15/12/2019",
+                                prise: "30 usd",
+                            },
+                            {
+                                key: "3",
+                                staffName: "xiaomi_mi_band_3",
+                                imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
+                                date: "15/02/2019",
+                                prise: "20 usd",
+                            },
+                            {
+                                key: "4",
+                                staffName: "xiaomi_mi_band_3",
+                                imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
+                                date: "15/02/2019",
+                                prise: "20 usd",
+                            },
+                            {
+                                key: "5",
+                                staffName: "xiaomi_mi_band_3",
+                                imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
+                                date: "15/02/2019",
+                                prise: "20 usd",
+
+                            },
+                        ]}
+                        renderItem={({item}) =>
+                            <View style={style.goodContainer}>
+                                <Image style={{width: 70, height: 120}} source={item.imgUrl}/>
+                                <Text>{item.staffName}</Text>
+                                <View style={style.goodMenu}>
+                                    <Text>{item.prise}</Text>
+                                </View>
+                            </View>
+                        }
+                        keyExtractor={(item, index) => item.key}
+                    />
                 </View>
             </ScrollView>
         )
@@ -114,11 +169,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = function (state) {
     return {
-        // basket: state.basket,
-        // curse: state.curse,
-        // balance: state.balance,
-        // reserves: state.reserves,
-        // userName: state.userName
+
     }
 };
 

@@ -1,7 +1,7 @@
 import * as React from "react";
 import {FlatList, Image, Text, View} from "react-native";
 import {style} from "./shOrdersScreen";
-import {Header} from "../../components/Header/Header";
+import Header from "../../components/Header/Header";
 import {inspect} from "util";
 
 export default class OrdersScreen extends React.Component {

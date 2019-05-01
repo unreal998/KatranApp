@@ -7,6 +7,7 @@ import store from "../../store";
 import {authAction} from "../../actions/authAction";
 import {AUTH_ACTION} from "../../constants/ActionTypes";
 import {bindActionCreators} from "redux";
+import {Slider} from "../../components/Slider/slider";
 
 class HomeScreen extends React.Component<any,any> {
     constructor(props){
@@ -38,17 +39,7 @@ class HomeScreen extends React.Component<any,any> {
 
         return(
             <ScrollView style={style.scrollView}>
-                <View style={style.sliderWrapper}>
-                    <Image style={style.arrowLeft} source={require("../../assets/images/leftArrow.png")}/>
-                    <Image style={style.arrowRight} source={require("../../assets/images/rightArrow.png")}/>
-                    <View nativeID={"sliderComponent"} style={style.sliderContainer}>
-                        <Image style={{width: 500, height: 200}} source={require("../../assets/images/catalogs/slideImg1.jpg")}/>
-                        <Image style={{width: 500, height: 200}} source={require("../../assets/images/catalogs/slideImg2.jpg")}/>
-                        <Image style={{width: 500, height: 200}} source={require("../../assets/images/catalogs/slideImg3.jpg")}/>
-                        <Image style={{width: 500, height: 200}} source={require("../../assets/images/catalogs/slideImg4.jpg")}/>
-                    </View>
-
-                </View>
+                <Slider/>
                 <Button title={"Каталог"} onPress={()=> this.props.navigation.navigate('Catalogue')}/>
                 <Text>Популярные товары</Text>
                 <View style={style.container}>

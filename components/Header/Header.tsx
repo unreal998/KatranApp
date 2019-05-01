@@ -25,8 +25,8 @@ export default class  Header extends React.Component<any, any> {
                     placeholder="Type Here..."
                     onChangeText={this.updateSearch}
                     value={search}
-                    containerStyle={{width: 100}}
-                    inputContainerStyle={{width: 100}}
+                    containerStyle={{width: 200, height: 50, backgroundColor: "#1e5799"}}
+                    inputContainerStyle={{width: 180, height: 30, backgroundColor: "#3670b3"}}
                 />
                 <Image style={{width: 20, height: 20}} source={require("../../assets/images/shopping-cart.png")}/>
             </View>

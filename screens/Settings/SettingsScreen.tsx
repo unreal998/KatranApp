@@ -1,9 +1,10 @@
 import * as React from "react";
-import {Button, Picker, Text, TextInput, TextInputComponent, View} from "react-native";
+import {Button, Image, Picker, Text, TextInput, TextInputComponent, View} from "react-native";
 import {style} from "./shSettingsScreen";
 import Header from "../../components/Header/Header";
 import {SIGN_OUT} from "../../constants/CommonTexts";
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
+import {Icon} from "native-base";
 
 const radio_props = [
     {label: 'Мужской', value: 0},
@@ -21,15 +22,16 @@ export default class SettingsScreen extends React.Component<any, any> {
             value: 0
         }
     }
-    static navigationOptions = ({navigation}) => {
-        return{
-            header: props => <Header roomName= {`Settings`}/>
-        };
+    static navigationOptions =  {
+        drawerIcon: (tint) => (
+            <Icon name="home"/>
+        ),
     };
 
     render(){
         return(
             <View style={style.container}>
+                <Header roomName="Settings" navigation={this.props.navigation}/>
                 <View style={style.labelWrapper}>
                     <View style={style.labelContainer}>
                         <Text style={style.labelName}>Name</Text>

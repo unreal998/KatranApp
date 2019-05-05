@@ -10,46 +10,35 @@ import {SafeAreaView, ScrollView, Text} from "react-native";
 import sideDrawerNavigator from "../components/sideNavigatior/sideDrawerNavigatior";
 import CatalogueScreen from "../screens/Catalogue/CatalogueScreen";
 import PromotionsScreen from "../screens/Promotions/PromotionsScreen";
+import Header from "../components/Header/Header";
+import {Icon} from "native-base";
 
 
 
-const HomeStack = createStackNavigator({
-    Home: HomeScreen,
-});
-const ReservesStack = createStackNavigator({
-    Reserves: OrdersScreen,
-});
-const CatalogueStack = createStackNavigator({
-    Catalogue: CatalogueScreen
-});
-const SettingsStack = createStackNavigator({
-    Settings: SettingsScreen,
-});
-const PromotionStack = createStackNavigator({
-    Promotions: PromotionsScreen
-});
 
 const DrawerNavigator =  createDrawerNavigator({
     Home: {
-        screen: HomeStack,
+        screen: HomeScreen,
     },
     Orders: {
-        screen: ReservesStack
+        screen: OrdersScreen
     },
     Catalogue: {
-        screen: CatalogueStack
+        screen: CatalogueScreen
     },
     Settings: {
-        screen: SettingsStack
+        screen: SettingsScreen,
     },
     Promotions: {
-        screen: PromotionStack
+        screen: PromotionsScreen
     }
     },
     {
         drawerBackgroundColor: "#FFFFFF",
         contentComponent: sideDrawerNavigator,
-
+        contentOptions: {
+            activeTintColor: 'orange'
+        }
     });
 
 export default DrawerNavigator;

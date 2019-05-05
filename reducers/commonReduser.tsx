@@ -10,7 +10,10 @@ const  initialState:IUserDetails = {
 
 export const commonReduser= (state:IUserDetails = initialState, action: IAction)=>{
     if (action.type = AUTH_ACTION){
-        return action.payload
+        return {
+            ...state,
+            auth: action.payload
+        }
     }
     return state
 };

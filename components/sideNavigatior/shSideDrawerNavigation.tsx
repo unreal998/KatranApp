@@ -4,6 +4,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    head : {
+      display: "flex",
+      flexDirection :"row",
+      alignContent: "center",
+      alignItems: "center",
+      marginTop: 5
+    },
     navItemStyle: {
         padding: 10
     },

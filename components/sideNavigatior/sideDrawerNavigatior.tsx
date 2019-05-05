@@ -2,14 +2,34 @@ import * as React from "react";
 import {Image, ScrollView, Text, View} from "react-native";
 import styles from "./shSideDrawerNavigation";
 import { DrawerItems, SafeAreaView } from 'react-navigation';
+import {connect} from "react-redux";
 
 
-const sideDrawerNavigator  = props => (
-    <ScrollView>
-        <Image source={require("../../assets/images/logo.png")}/>
-        <SafeAreaView style={styles.container} forceInset={{ top: 'always', horizontal: 'never' }}>
-        <DrawerItems {...props} />
-        </SafeAreaView>
-    </ScrollView>
-);
-export default sideDrawerNavigator;
+class sideDrawerNavigator extends React.Component<any, any> {
+    constructor(props) {
+        super(props);
+        this.state = {
+            userName: ""
+        }
+    }
+
+    render() {
+        return (
+            <ScrollView>
+                <View style={styles.head}>
+                    <Image style = {{width: 60, height: 60, marginRight: 4}} source={require("../../assets/images/logo.png")}/>
+                    <Text>{this.props.userName}</Text>
+                </View>
+                <SafeAreaView style={styles.container} forceInset={{top: 'always', horizontal: 'never'}}>
+                    <DrawerItems {...this.props} />
+                </SafeAreaView>
+            </ScrollView>
+        )
+    }
+}
+function mapStateToProps(state) {
+    return {
+        userName: state.userName
+    }
+}
+export default connect(mapStateToProps)(sideDrawerNavigator);

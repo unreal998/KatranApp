@@ -21,7 +21,7 @@ export class Slider extends Component<{}> {
                     customSlide={({ index, item, style, width }) => (
                         // It's important to put style here because it's got offset inside
                         <View key={index} style={[style, styles.imageContainer]}>
-                            <Image style={{width: 360, height: 120}} source={item}/>
+                            <Image style={{width: 340, height: 120, alignItems:"center"}} source={item}/>
                         </View>
                     )}
                     customButtons={(position, move) => (
@@ -31,11 +31,12 @@ export class Slider extends Component<{}> {
                                     <TouchableHighlight
                                         key={index}
                                         underlayColor="#ccc"
-                                        onPress={() => move(index)}
+                                        onPress={() => {
+                                            move(index);
+                                        }}
+                                        style={styles.sliderCircle}
                                     >
-                                        <Text >
-                                            {index + 1}
-                                        </Text>
+                                        <View style={position === index && styles.sliderCircleSelected}/>
                                     </TouchableHighlight>
                                 );
                             })}

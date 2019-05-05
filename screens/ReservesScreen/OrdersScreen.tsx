@@ -2,18 +2,19 @@ import * as React from "react";
 import {FlatList, Image, Text, View} from "react-native";
 import {style} from "./shOrdersScreen";
 import Header from "../../components/Header/Header";
-import {inspect} from "util";
+import {Icon} from "native-base";
 
-export default class OrdersScreen extends React.Component {
-    static navigationOptions = ({navigation}) => {
-        return{
-            header: props => <Header roomName= {`Orders`}/>
-        };
+export default class OrdersScreen extends React.Component<any, any> {
+    static navigationOptions =  {
+        drawerIcon: (tint) => (
+            <Icon name="home"/>
+        ),
     };
 
     render(){
         return(
             <View style={style.container}>
+                <Header roomName= {`Orders`} navigation={this.props.navigation}/>
                 <FlatList
                     data={[
                         {

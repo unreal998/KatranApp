@@ -2,6 +2,7 @@ import {StyleSheet} from "react-native";
 
 export const style = StyleSheet.create({
     container:{
+        backgroundColor: "#f3f3f4",
     },
     labelWrapper: {
         padding: 3,

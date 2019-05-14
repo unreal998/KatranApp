@@ -20,7 +20,7 @@ export default class  Header extends React.Component<any, any> {
         const { search } = this.state;
         return (
             <View style={style.header}>
-                <Icon name="home" style={{color:"white"}} onPress={() => {this.props.navigation.openDrawer()}}/>
+                <Icon name="reorder" style={{color:"white"}} onPress={() => {this.props.navigation.openDrawer()}}/>
                 <Text style={style.roomName}>{this.props.roomName}</Text>
                 <SearchBar
                     placeholder="Type Here..."

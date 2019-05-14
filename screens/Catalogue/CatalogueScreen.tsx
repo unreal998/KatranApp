@@ -10,7 +10,7 @@ export default class CatalogueScreen extends React.Component<any, any> {
     // };
     static navigationOptions = {
         drawerIcon: (tint) => (
-            <Icon name="home"/>
+            <Icon name="ios-add"/>
         ),
     };
     render(){

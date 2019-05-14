@@ -7,8 +7,8 @@ import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-
 import {Icon} from "native-base";
 
 const radio_props = [
-    {label: 'Мужской', value: 0},
-    {label: 'Женский', value: 1}
+    {label: 'Male', value: 0},
+    {label: 'Female', value: 1}
 ];
 
 
@@ -24,7 +24,7 @@ export default class SettingsScreen extends React.Component<any, any> {
     }
     static navigationOptions =  {
         drawerIcon: (tint) => (
-            <Icon name="home"/>
+            <Icon name="build"/>
         ),
     };
 

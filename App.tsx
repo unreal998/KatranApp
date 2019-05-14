@@ -10,7 +10,6 @@ import {commonReduser} from "./reducers/commonReduser";
 const style = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#0f0"
     }
 });
 

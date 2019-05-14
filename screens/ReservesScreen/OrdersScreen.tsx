@@ -7,7 +7,7 @@ import {Icon} from "native-base";
 export default class OrdersScreen extends React.Component<any, any> {
     static navigationOptions =  {
         drawerIcon: (tint) => (
-            <Icon name="home"/>
+            <Icon name="history"/>
         ),
     };
 

@@ -1,7 +1,7 @@
 import { createStackNavigator, DrawerItems } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
-import OrdersScreen from "../screens/ReservesScreen/OrdersScreen";
+import OrdersScreen from "../screens/OrdrersScreen/OrdersScreen";
 import HomeScreen from "../screens/Home/HomeScreen";
 import SettingsScreen from "../screens/Settings/SettingsScreen";
 import * as React from "react";

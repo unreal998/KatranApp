@@ -6,6 +6,7 @@ import AuthNavigation from "./AuthNavigation";
 
 const AppNavigation = createSwitchNavigator({
     SignIn: AuthNavigation,
-    MainApp: DrawerNavigator});
+    MainApp: DrawerNavigator
+});
 
 export default createAppContainer(AppNavigation);

@@ -18,7 +18,7 @@ class sideDrawerNavigator extends React.Component<any, any> {
             <ScrollView>
                 <View style={styles.head}>
                     <Image style = {{width: 60, height: 60, marginRight: 4}} source={require("../../assets/images/logo.png")}/>
-                    <Text>{this.props.userName}</Text>
+                    <Text style = {styles.userNameText}>{this.props.userName.toUpperCase()}</Text>
                 </View>
                 <SafeAreaView style={styles.container} forceInset={{top: 'always', horizontal: 'never'}}>
                     <DrawerItems {...this.props} />

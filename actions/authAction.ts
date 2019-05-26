@@ -8,7 +8,17 @@ const defaultUserState: IUserDetails = {
   curse: "26/25"
 };
 
-export let authAction: any = {
-    type: AUTH_ACTION,
-    payload: {defaultUserState}
-};
+export function authAction(data) {
+    if (data) {
+        return ({
+            type: AUTH_ACTION,
+            payload: {defaultUserState}
+        })
+    }
+    else {
+        return ({
+            type: AUTH_ACTION,
+            payload: {defaultUserState}
+        })
+    }
+}

@@ -4,6 +4,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    userNameText: {
+      fontSize: 15,
+      fontWeight: "bold",
+      color: "#1d1d1d"
+    },
     head : {
       display: "flex",
       flexDirection :"row",

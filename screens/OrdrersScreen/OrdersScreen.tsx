@@ -21,14 +21,14 @@ export default class OrdersScreen extends React.Component<any, any> {
                             key: "1",
                             staffName: "xiaomi_mi_band_3",
                             imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
-                            date: "15/02/2019",
+                            date: "20/05/2019",
                             prise: "20 usd",
                         },
                         {
                             key: "2",
                             staffName: "xiaomi_mi_band_3",
                             imgUrl: require("../../assets/images/catalogs/xiaomi_mi_band_3.jpg"),
-                            date: "15/12/2019",
+                            date: "20/05/2019",
                             prise: "30 usd",
                         },
                         {

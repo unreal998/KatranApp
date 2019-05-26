@@ -5,6 +5,7 @@ import Header from "../../components/Header/Header";
 import {SIGN_OUT} from "../../constants/CommonTexts";
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 import {Icon} from "native-base";
+import {auth} from "../../firebase/initFirebase";
 
 const radio_props = [
     {label: 'Male', value: 0},
@@ -13,20 +14,25 @@ const radio_props = [
 
 
 export default class SettingsScreen extends React.Component<any, any> {
-    // state = {
-    //     isLoadingComplete: false,
-    // };
+
     constructor(props) {
         super(props);
         this.state = {
             value: 0
-        }
+        };
+        this.signOut = this.signOut.bind(this);
     }
     static navigationOptions =  {
         drawerIcon: (tint) => (
             <Icon name="build"/>
         ),
     };
+
+    signOut() {
+        auth.signOut().then(
+            this.props.navigation.navigate('LogIn')
+        );
+    }
 
     render(){
         return(
@@ -48,13 +54,13 @@ export default class SettingsScreen extends React.Component<any, any> {
                 </View>
                 <View style={style.labelWrapper}>
                     <View style={style.labelContainer}>
-                        <Text style={style.labelName}>Дата рождения</Text>
+                        <Text style={style.labelName}>Birthday</Text>
                         <TextInput style={style.labelContent}>29/08/1998</TextInput>
                     </View>
                 </View>
                 <View style={style.labelWrapper}>
                     <View style={style.labelContainer}>
-                        <Text style={style.labelName}>Пол</Text>
+                        <Text style={style.labelName}>Gender</Text>
                         <RadioForm
                             radio_props={radio_props}
                             initial={0}
@@ -62,7 +68,7 @@ export default class SettingsScreen extends React.Component<any, any> {
                         />
                     </View>
                 </View>
-                <Button title={SIGN_OUT} onPress={()=> this.props.navigation.navigate('LogIn')}/>
+                <Button title={SIGN_OUT} onPress={this.signOut}/>
             </View>
         )
     }

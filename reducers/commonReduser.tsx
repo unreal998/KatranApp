@@ -1,7 +1,7 @@
 import {AUTH_ACTION} from "../constants/ActionTypes";
 
-const  initialState:IUserDetails = {
-    userName: "userName",
+export const initialState:IUserDetails = {
+    userName: "Maksym",
     balance: 0,
     basket: 0,
     curse: "0|0",

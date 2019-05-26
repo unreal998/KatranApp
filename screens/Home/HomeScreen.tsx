@@ -27,7 +27,8 @@ class HomeScreen extends React.Component<any,any> {
 
 
     componentWillMount(){
-        store.dispatch(authAction);
+
+        // store.dispatch(authAction);
     }
     render(){
 
@@ -37,7 +38,7 @@ class HomeScreen extends React.Component<any,any> {
                 <ScrollView style={style.scrollView}>
                     <Slider/>
                     <Button title={"Каталог"} onPress={()=> this.props.navigation.navigate('Catalogue')}/>
-                    <Text>Популярные товары</Text>
+                    <Text>Last added</Text>
                     <View style={style.container}>
                             <FlatList
                                 data={
